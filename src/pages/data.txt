@@ -1,0 +1,36 @@
+Algoritma Genetika pembelian komputer
+1. Representasi kromosom (a,b) 
+    bilangan `a 0` = pembelian online 
+    bilangan `a 1` = pembelian offline
+    bilangan `b` = nama toko atau nomor toko
+    example 1,5 = offline, toko anandam
+    Pembuatan kromosom dinyatakan valid, jika toko menjual komponen yang diminta
+
+2. Fungsi Fitness
+    - Hitung total harga dari masing-masing komponen di toko yang telah ditentukan.
+    - Jika suatu komponen dibeli di toko online, tambahkan biaya ongkos kirim ke biaya total.
+    - Tentukan semua toko offline yang akan dikunjungi. Lalu, untuk menentukan rute dengan biaya minimum, 
+    pencarian rute dilakukan secara complete search. Setelah menentukan rute terbaik, hitung biayanya dan tambahkan ke biaya total
+    Example : total harga komponen satu kromosom 24,000,000 + biaya ongkir 500,000 + biaya transport dengan rute minimal 50.000
+    total Rp 24.550.000
+
+3. populasi 
+    untuk setiap perulangan atau generasi , jumlah kromosom yang digunakan 10 kromosom. pembangkitan dilakukan secara acak.
+
+4. Seleksi Parent
+    Dari 10 kromosom, dipilih 4 pasang kromosom  berbeda yang akan dijadikan sebagai parents. proses seleksi ini menggunakan roullette wheel 
+    yang mana akan mencari probabilitas fitnes kumulatif pada setiap individu di sebuah populasi. setelah mendapatkan nilai fitness terbaik, 
+    selanjutnya dipilih 4 pasang kromosom dari roullete whell.
+
+5. Proses Crossover
+    prosese crossover dilakukan dengan cara membangkitkan sebuah bilangan acak 0 - 1 dimasing masing gen. jika nilai yang didapat dari 
+    hasil random >= 0,5 maka gen dari parent 1 akan menjadi gen offspring 1, dan parent 2 akan menjadi gen offspring 2. namun, 
+    jika nilainya <0.5, maka gen dari parent 1 akan menjadi gen untuk offspring 2 dan gen dari parent 2 akan menjadi gen untuk offspring 1.
+
+6. Prosos Mutasi
+    Dipilih satu offspring dari proses crossover secara acak untuk dimutasi. lalu dari 15 gen yang ada, dipilih satu gen untuk dijadikan mutasi.
+    syarat dijadikan mutasi :
+        1. untuk nilai pertama, jika nilainya 0. maka diubah menjadi 1 dan sebaliknya
+        2. untuk nilai kedua, nilainya diacak dari 1 - 6.*
+
+        
