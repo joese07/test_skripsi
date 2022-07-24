@@ -150,189 +150,170 @@ let fitnesHari ;
 let fitnesKualitas ;
 
 //Kromosom 1 Seleksi Fitness sabtu
-if(shuffleArray[2].nama === shuffleArrayDua[0].nama){
+if(shuffleArray[2].nama === shuffleArrayDua[0].nama || shuffleArrayDua[2].nama === shuffleArrayTiga[0].nama || shuffleArrayTiga[2].nama === shuffleArrayEmpat[0].nama){
     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 1)")
-    fitnesShift = 1;
+    fitnesShift = 0;
 }
-if(shuffleArray[0].nama === shuffleArray[1].nama === shuffleArray[2].nama){
+if(shuffleArray[0].nama === shuffleArray[1].nama === shuffleArray[2].nama || shuffleArrayDua[0].nama === shuffleArrayDua[1].nama === shuffleArrayDua[2].nama || shuffleArrayTiga[0].nama === shuffleArrayTiga[1].nama === shuffleArrayTiga[2].nama || shuffleArrayEmpat[0].nama === shuffleArrayEmpat[1].nama === shuffleArrayEmpat[2].nama){
     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 1)")
-    fitnesHari = 1;
+    fitnesHari = 0;
 }
 if(shuffleArray[0].kualitas === 0 && shuffleArray[1].kualitas === 0 && shuffleArray[2].kualitas === 0 ){
     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 1)")
-    fitnesKualitas = 1;
+    fitnesKualitas = 0;
 }
-
-
 //Kromosom 1 seleksi Fitness Minggu
-if(shuffleArrayDua[2].nama === shuffleArrayTiga[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 1)")
-    fitnesShift = 1;
-}
-if(shuffleArrayDua[0].nama === shuffleArrayDua[1].nama === shuffleArrayDua[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 1)")
-    fitnesHari = 1;
-}
 if(shuffleArrayDua[0].kualitas === 0 && shuffleArrayDua[1].kualitas === 0 && shuffleArrayDua[2].kualitas === 0 ){
     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 1)")
-    fitnesKualitas = 1;
+    fitnesKualitas = 0;
 }
-
 //Kromosom 1 Seleksi Fitness Sabtu 2
-if(shuffleArrayTiga[2].nama === shuffleArrayEmpat[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 1)")
-    fitnesShift = 1;
-}
-if(shuffleArrayTiga[0].nama === shuffleArrayTiga[1].nama === shuffleArrayTiga[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 1)")
-    fitnesHari = 1;
-}
 if(shuffleArrayTiga[0].kualitas === 0 && shuffleArrayTiga[1].kualitas === 0 && shuffleArrayTiga[2].kualitas === 0 ){
     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 1)")
-    fitnesKualitas = 1;
+    fitnesKualitas = 0;
 }
-
 //Kromosom 1 Seleksi Fitness Minggu 2
-if(shuffleArrayEmpat[0].nama === shuffleArrayEmpat[1].nama === shuffleArrayEmpat[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 1)")
-    fitnesHari = 1;
-}
 if(shuffleArrayEmpat[0].kualitas === 0 && shuffleArrayEmpat[1].kualitas === 0 && shuffleArrayEmpat[2].kualitas === 0 ){
     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 1)")
-    fitnesKualitas = 1;
+    fitnesKualitas = 0;
 }
 
-console.log(fitnesKualitas)
-console.log(fitnesHari)
-console.log(fitnesShift)
+const totalFitness = fitnesShift + 1
+const totalFitnessOne = fitnesKualitas + 1
 
-//Kromosom 2 Seleksi Fitness sabtu
-if(shuffleArrayLima[2].nama === shuffleArrayEnam[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 2)")
-}
-if(shuffleArrayLima[0].nama === shuffleArrayLima[1].nama === shuffleArrayLima[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
-}
-if(shuffleArrayLima[0].kualitas === 0 && shuffleArrayLima[1].kualitas === 0 && shuffleArrayLima[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
+if(isNaN(totalFitness || totalFitnessOne)){
+console.log()
+} else {
+console.log(`total fitnes shift ${totalFitness} + ${totalFitnessOne} `)
 }
 
-//Kromosom 2 seleksi Fitness Minggu
-if(shuffleArrayLima[2].nama === shuffleArrayEnam[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 2)")
-}
-if(shuffleArrayEnam[0].nama === shuffleArrayEnam[1].nama === shuffleArrayEnam[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
-}
-if(shuffleArrayEnam[0].kualitas === 0 && shuffleArrayEnam[1].kualitas === 0 && shuffleArrayEnam[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
-}
+// //Kromosom 2 Seleksi Fitness sabtu
+// if(shuffleArrayLima[2].nama === shuffleArrayEnam[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 2)")
+// }
+// if(shuffleArrayLima[0].nama === shuffleArrayLima[1].nama === shuffleArrayLima[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
+// }
+// if(shuffleArrayLima[0].kualitas === 0 && shuffleArrayLima[1].kualitas === 0 && shuffleArrayLima[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
+// }
 
-//Kromosom 2 Seleksi Fitness Sabtu 2
-if(shuffleArrayEnam[2].nama === shuffleArrayTujuh[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 2)")
-}
-if(shuffleArrayTujuh[0].nama === shuffleArrayTujuh[1].nama === shuffleArrayTujuh[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
-}
-if(shuffleArrayTujuh[0].kualitas === 0 && shuffleArrayTujuh[1].kualitas === 0 && shuffleArrayTujuh[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
-}
+// //Kromosom 2 seleksi Fitness Minggu
+// if(shuffleArrayLima[2].nama === shuffleArrayEnam[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 2)")
+// }
+// if(shuffleArrayEnam[0].nama === shuffleArrayEnam[1].nama === shuffleArrayEnam[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
+// }
+// if(shuffleArrayEnam[0].kualitas === 0 && shuffleArrayEnam[1].kualitas === 0 && shuffleArrayEnam[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
+// }
 
-//Kromosom 2 Seleksi Fitness Minggu 2
-if(shuffleArrayDelapan[0].nama === shuffleArrayDelapan[1].nama === shuffleArrayDelapan[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
-}
-if(shuffleArrayDelapan[0].kualitas === 0 && shuffleArrayDelapan[1].kualitas === 0 && shuffleArrayDelapan[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
-}
+// //Kromosom 2 Seleksi Fitness Sabtu 2
+// if(shuffleArrayEnam[2].nama === shuffleArrayTujuh[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 2)")
+// }
+// if(shuffleArrayTujuh[0].nama === shuffleArrayTujuh[1].nama === shuffleArrayTujuh[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
+// }
+// if(shuffleArrayTujuh[0].kualitas === 0 && shuffleArrayTujuh[1].kualitas === 0 && shuffleArrayTujuh[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
+// }
 
-
-
-//Kromosom 3 Seleksi Fitness sabtu
-if(shuffleArraySembilan[2].nama === shuffleArraySepuluh[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 3)")
-}
-if(shuffleArraySembilan[0].nama === shuffleArraySembilan[1].nama === shuffleArraySembilan[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
-}
-if(shuffleArraySembilan[0].kualitas === 0 && shuffleArraySembilan[1].kualitas === 0 && shuffleArraySembilan[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
-}
-
-//Kromosom 3 seleksi Fitness Minggu
-if(shuffleArraySepuluh[2].nama === shuffleArraySebelas[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 3)")
-}
-if(shuffleArraySepuluh[0].nama === shuffleArraySepuluh[1].nama === shuffleArraySepuluh[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
-}
-if(shuffleArraySepuluh[0].kualitas === 0 && shuffleArraySepuluh[1].kualitas === 0 && shuffleArraySepuluh[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
-}
-
-//Kromosom 3 Seleksi Fitness Sabtu 2
-if(shuffleArraySebelas[2].nama === shuffleArrayDuabelas[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 3)")
-}
-if(shuffleArraySebelas[0].nama === shuffleArraySebelas[1].nama === shuffleArraySebelas[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
-}
-if(shuffleArraySebelas[0].kualitas === 0 && shuffleArraySebelas[1].kualitas === 0 && shuffleArraySebelas[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
-}
-
-//Kromosom 3 Seleksi Fitness Minggu 2
-if(shuffleArrayDuabelas[0].nama === shuffleArrayDuabelas[1].nama === shuffleArrayDuabelas[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
-}
-if(shuffleArrayDuabelas[0].kualitas === 0 && shuffleArrayDuabelas[1].kualitas === 0 && shuffleArrayDuabelas[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
-}
+// //Kromosom 2 Seleksi Fitness Minggu 2
+// if(shuffleArrayDelapan[0].nama === shuffleArrayDelapan[1].nama === shuffleArrayDelapan[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 2)")
+// }
+// if(shuffleArrayDelapan[0].kualitas === 0 && shuffleArrayDelapan[1].kualitas === 0 && shuffleArrayDelapan[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 2)")
+// }
 
 
 
+// //Kromosom 3 Seleksi Fitness sabtu
+// if(shuffleArraySembilan[2].nama === shuffleArraySepuluh[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 3)")
+// }
+// if(shuffleArraySembilan[0].nama === shuffleArraySembilan[1].nama === shuffleArraySembilan[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
+// }
+// if(shuffleArraySembilan[0].kualitas === 0 && shuffleArraySembilan[1].kualitas === 0 && shuffleArraySembilan[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
+// }
 
-//Kromosom 4 Seleksi Fitness sabtu
-if(shuffleArrayTigabelas[2].nama === shuffleArrayEmpatbelas[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 4)")
-}
-if(shuffleArrayTigabelas[0].nama === shuffleArrayTigabelas[1].nama === shuffleArrayTigabelas[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 4)")
-}
-if(shuffleArrayTigabelas[0].kualitas === 0 && shuffleArrayTigabelas[1].kualitas === 0 && shuffleArrayTigabelas[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 4)")
-}
+// //Kromosom 3 seleksi Fitness Minggu
+// if(shuffleArraySepuluh[2].nama === shuffleArraySebelas[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 3)")
+// }
+// if(shuffleArraySepuluh[0].nama === shuffleArraySepuluh[1].nama === shuffleArraySepuluh[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
+// }
+// if(shuffleArraySepuluh[0].kualitas === 0 && shuffleArraySepuluh[1].kualitas === 0 && shuffleArraySepuluh[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
+// }
 
-//Kromosom 4 seleksi Fitness Minggu
-if(shuffleArrayEmpatbelas[2].nama === shuffleArrayLimabelas[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 4)")
-}
-if(shuffleArrayEmpatbelas[0].nama === shuffleArrayEmpatbelas[1].nama === shuffleArrayEmpatbelas[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 4)")
-}
-if(shuffleArrayEmpatbelas[0].kualitas === 0 && shuffleArrayEmpatbelas[1].kualitas === 0 && shuffleArrayEmpatbelas[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 4)")
-}
+// //Kromosom 3 Seleksi Fitness Sabtu 2
+// if(shuffleArraySebelas[2].nama === shuffleArrayDuabelas[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 3)")
+// }
+// if(shuffleArraySebelas[0].nama === shuffleArraySebelas[1].nama === shuffleArraySebelas[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
+// }
+// if(shuffleArraySebelas[0].kualitas === 0 && shuffleArraySebelas[1].kualitas === 0 && shuffleArraySebelas[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
+// }
 
-//Kromosom 4 Seleksi Fitness Sabtu 2
-if(shuffleArrayLimabelas[2].nama === shuffleArrayEnambelas[0].nama){
-    console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 4)")
-}
-if(shuffleArrayLimabelas[0].nama === shuffleArrayLimabelas[1].nama === shuffleArrayLimabelas[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 4)")
-}
-if(shuffleArrayLimabelas[0].kualitas === 0 && shuffleArrayLimabelas[1].kualitas === 0 && shuffleArrayLimabelas[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 4)")
-}
+// //Kromosom 3 Seleksi Fitness Minggu 2
+// if(shuffleArrayDuabelas[0].nama === shuffleArrayDuabelas[1].nama === shuffleArrayDuabelas[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
+// }
+// if(shuffleArrayDuabelas[0].kualitas === 0 && shuffleArrayDuabelas[1].kualitas === 0 && shuffleArrayDuabelas[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
+// }
 
-//Kromosom 3 Seleksi Fitness Minggu 2
-if(shuffleArrayEnambelas[0].nama === shuffleArrayEnambelas[1].nama === shuffleArrayEnambelas[2].nama){
-    console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
-}
-if(shuffleArrayEnambelas[0].kualitas === 0 && shuffleArrayEnambelas[1].kualitas === 0 && shuffleArrayEnambelas[2].kualitas === 0 ){
-    console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
-}
+
+
+
+// //Kromosom 4 Seleksi Fitness sabtu
+// if(shuffleArrayTigabelas[2].nama === shuffleArrayEmpatbelas[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 4)")
+// }
+// if(shuffleArrayTigabelas[0].nama === shuffleArrayTigabelas[1].nama === shuffleArrayTigabelas[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 4)")
+// }
+// if(shuffleArrayTigabelas[0].kualitas === 0 && shuffleArrayTigabelas[1].kualitas === 0 && shuffleArrayTigabelas[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 4)")
+// }
+
+// //Kromosom 4 seleksi Fitness Minggu
+// if(shuffleArrayEmpatbelas[2].nama === shuffleArrayLimabelas[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 4)")
+// }
+// if(shuffleArrayEmpatbelas[0].nama === shuffleArrayEmpatbelas[1].nama === shuffleArrayEmpatbelas[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 4)")
+// }
+// if(shuffleArrayEmpatbelas[0].kualitas === 0 && shuffleArrayEmpatbelas[1].kualitas === 0 && shuffleArrayEmpatbelas[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 4)")
+// }
+
+// //Kromosom 4 Seleksi Fitness Sabtu 2
+// if(shuffleArrayLimabelas[2].nama === shuffleArrayEnambelas[0].nama){
+//     console.log("point + 1, tidak boleh shit malam lanjut shit pagi (kromosom 4)")
+// }
+// if(shuffleArrayLimabelas[0].nama === shuffleArrayLimabelas[1].nama === shuffleArrayLimabelas[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 4)")
+// }
+// if(shuffleArrayLimabelas[0].kualitas === 0 && shuffleArrayLimabelas[1].kualitas === 0 && shuffleArrayLimabelas[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 4)")
+// }
+
+// //Kromosom 3 Seleksi Fitness Minggu 2
+// if(shuffleArrayEnambelas[0].nama === shuffleArrayEnambelas[1].nama === shuffleArrayEnambelas[2].nama){
+//     console.log("point + 2, tidak boleh dalam satu hari nama sama (kromosom 3)")
+// }
+// if(shuffleArrayEnambelas[0].kualitas === 0 && shuffleArrayEnambelas[1].kualitas === 0 && shuffleArrayEnambelas[2].kualitas === 0 ){
+//     console.log("point + 3, tidak boleh masih trainning di shift yang sama (kromosom 3)")
+// }
 
     setDataPembina(data)
     setDataPembinaDua(dataDua)
