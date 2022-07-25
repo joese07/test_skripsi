@@ -5,51 +5,65 @@ const [dataPembina, setDataPembina] = useState()
 const [dataPembinaDua, setDataPembinaDua] = useState()
 const [dataPembinaTiga, setDataPembinaTiga] = useState()
 const [dataPembinaEmpat, setDataPembinaEmpat] = useState()
-const [fitnesKromosomSatu,setfitnesKromosomSatu] = useState()
+const [fitnesKromosomSatu,setfitnesKromosomSatu] = useState(0)
 
 
 const [dataPembinaLima, setDataPembinaLima] = useState()
 const [dataPembinaEnam, setDataPembinaEnam] = useState()
 const [dataPembinaTujuh, setDataPembinaTujuh] = useState()
 const [dataPembinaDelapan, setDataPembinaDelapan] = useState()
-const [fitnesKromosomDua, setfitnesKromosomDua] = useState()
+const [fitnesKromosomDua, setfitnesKromosomDua] = useState(0)
 
 const [dataPembinaSembilan, setDataPembinaSembilan] = useState()
 const [dataPembinaSepuluh, setDataPembinaSepuluh] = useState()
 const [dataPembinaSebelas, setDataPembinaSebelas] = useState()
 const [dataPembinaDuabelas, setDataPembinaDuabelas] = useState()
-const [fitnesKromosomTiga, setfitnesKromosomTiga] = useState()
+const [fitnesKromosomTiga, setfitnesKromosomTiga] = useState(0)
 
 const [dataPembinaTigabelas, setDataPembinaTigabelas] = useState()
 const [dataPembinaEmpatbelas, setDataPembinaEmpatbelas] = useState()
 const [dataPembinaLimabelas, setDataPembinaLimabelas] = useState()
 const [dataPembinaEnambelas, setDataPembinaEnambelas] = useState()
-const [fitnessKromosomEmpat, setfitnesKromosomEmpat] = useState()
+const [fitnessKromosomEmpat, setfitnesKromosomEmpat] = useState(0)
 
+const[tableIndukSatu, setTableIndukSatu] = useState()
+const[tableIndukDua, setTableIndukDua] = useState()
 
 const pembina  = [{
+    id: 1,
     nama : "agus",
     kualitas: 0},{
+        id: 2,
     nama : "maya",
     kualitas: 1},{
+        id: 3,
     nama : "marleen",
     kualitas: 1},{
+        id: 4,
     nama : "sarti",
     kualitas: 1},{
+        id: 5,
     nama : "parlent",
     kualitas: 1},{
+        id: 6,
     nama : "painem",
     kualitas: 0},{
+        id: 7,
     nama : "markus",
     kualitas: 0},{
+        id: 8,
     nama : "joese",
     kualitas: 1},{
+        id: 9,
     nama : "rio",
     kualitas: 0},{
+        id: 10,
     nama : "telysana",
     kualitas: 0},{
+        id: 11,
     nama : "tunajaya",
     kualitas: 1},{
+        id: 12,
     nama : "siapa",
     kualitas: 0}]
 
@@ -59,98 +73,98 @@ const handleGenerate = () =>{
     const render = pembina.map((data)=>(data))
     const shuffleArray = render.sort(() => Math.random()  - 0.5)
     shuffleArray.length = 3
-    const data = shuffleArray.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+    const data = shuffleArray.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
     
 
 // Kromosom 1 Minggu
 const renderDua = pembina.map((data)=>(data))
 const shuffleArrayDua = renderDua.sort(() => Math.random()  - 0.5)
 shuffleArrayDua.length = 3
-const dataDua = shuffleArrayDua.map((data, index)=>(<td key={index+1}>{data.nama}: {data.kualitas}</td>))
+const dataDua = shuffleArrayDua.map((data, index)=>(<td key={data.id}>{data.nama}: {data.kualitas}</td>))
 
 //Kromosom 1 Sabtu
 const renderTiga = pembina.map((data)=>(data))
 const shuffleArrayTiga = renderTiga.sort(() => Math.random()  - 0.5)
 shuffleArrayTiga.length = 3
-const dataTiga = shuffleArrayTiga.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataTiga = shuffleArrayTiga.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 1 Minggu
 const renderEmpat = pembina.map((data)=>(data))
 const shuffleArrayEmpat = renderEmpat.sort(() => Math.random()  - 0.5)
 shuffleArrayEmpat.length = 3
-const dataEmpat = shuffleArrayEmpat.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataEmpat = shuffleArrayEmpat.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 2 Sabtu
 const renderLima = pembina.map((data, index)=>(data))
 const shuffleArrayLima = renderLima.sort(() => Math.random()  - 0.5)
 shuffleArrayLima.length = 3
-const dataLima = shuffleArrayLima.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataLima = shuffleArrayLima.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 2 Minggu
 const renderEnam = pembina.map((data, index)=>(data))
 const shuffleArrayEnam = renderEnam.sort(() => Math.random()  - 0.5)
 shuffleArrayEnam.length = 3
-const dataEnam = shuffleArrayEnam.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataEnam = shuffleArrayEnam.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 2 Sabtu
 const renderTujuh = pembina.map((data, index)=>(data))
 const shuffleArrayTujuh = renderTujuh.sort(() => Math.random()  - 0.5)
 shuffleArrayTujuh.length = 3
-const dataTujuh = shuffleArrayTujuh.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataTujuh = shuffleArrayTujuh.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 2 Minggu
 const renderDelapan = pembina.map((data, index)=>(data))
 const shuffleArrayDelapan = renderDelapan.sort(() => Math.random()  - 0.5)
 shuffleArrayDelapan.length = 3
-const dataDelapan = shuffleArrayDelapan.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataDelapan = shuffleArrayDelapan.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 3 Sabtu
 const renderSembilan = pembina.map((data, index)=>(data))
 const shuffleArraySembilan = renderSembilan.sort(() => Math.random()  - 0.5)
 shuffleArraySembilan.length = 3
-const dataSembilan = shuffleArraySembilan.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataSembilan = shuffleArraySembilan.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 3 Minggu
 const renderSepuluh = pembina.map((data, index)=>(data))
 const shuffleArraySepuluh = renderSepuluh.sort(() => Math.random()  - 0.5)
 shuffleArraySepuluh.length = 3
-const dataSepuluh = shuffleArraySepuluh.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataSepuluh = shuffleArraySepuluh.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 3 Sabtu
 const renderSebelas = pembina.map((data, index)=>(data))
 const shuffleArraySebelas = renderSebelas.sort(() => Math.random()  - 0.5)
 shuffleArraySebelas.length = 3
-const dataSebelas = shuffleArraySebelas.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataSebelas = shuffleArraySebelas.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 3 Minggu
 const renderDuabelas = pembina.map((data, index)=>(data))
 const shuffleArrayDuabelas = renderDuabelas.sort(() => Math.random()  - 0.5)
 shuffleArrayDuabelas.length = 3
-const dataDuabelas = shuffleArrayDuabelas.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataDuabelas = shuffleArrayDuabelas.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 4 Sabtu
 const renderTigabelas = pembina.map((data, index)=>(data))
 const shuffleArrayTigabelas = renderTigabelas.sort(() => Math.random()  - 0.5)
 shuffleArrayTigabelas.length = 3
-const dataTigabelas = shuffleArrayTigabelas.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataTigabelas = shuffleArrayTigabelas.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 4 Minggu
 const renderEmpatbelas = pembina.map((data, index)=>(data))
 const shuffleArrayEmpatbelas = renderEmpatbelas.sort(() => Math.random()  - 0.5)
 shuffleArrayEmpatbelas.length = 3
-const dataEmpatbelas = shuffleArrayEmpatbelas.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataEmpatbelas = shuffleArrayEmpatbelas.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 4 Sabtu
 const renderLimabelas = pembina.map((data, index)=>(data))
 const shuffleArrayLimabelas = renderLimabelas.sort(() => Math.random()  - 0.5)
 shuffleArrayLimabelas.length = 3
-const dataLimabelas = shuffleArrayLimabelas.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataLimabelas = shuffleArrayLimabelas.map((data, index)=>(<td key={index.id}>{data.nama} : {data.kualitas}</td>))
 
 //Kromosom 4 Minggu
 const renderEnambelas = pembina.map((data, index)=>(data))
 const shuffleArrayEnambelas = renderEnambelas.sort(() => Math.random()  - 0.5)
 shuffleArrayEnambelas.length = 3
-const dataEnambelas = shuffleArrayEnambelas.map((data, index)=>(<td key={index+1}>{data.nama} : {data.kualitas}</td>))
+const dataEnambelas = shuffleArrayEnambelas.map((data, index)=>(<td key={data.id}>{data.nama} : {data.kualitas}</td>))
 
 
 let fitnesShiftKromosomSatu ;
@@ -189,6 +203,7 @@ let fitnesKualitasKromosomSatu ;
     
     if(fitnesShiftKromosomSatu === undefined){
         console.log()
+        setfitnesKromosomSatu(0)
     } else{
         console.log(fitnesShiftKromosomSatu)
         setfitnesKromosomSatu(fitnesShiftKromosomSatu)
@@ -251,6 +266,7 @@ if(shuffleArrayDelapan[0].kualitas === 0 && shuffleArrayDelapan[1].kualitas === 
 }
 if(fitnessShiftKromosomDua === undefined){
     console.log()
+    setfitnesKromosomDua(0)
 } else{
     console.log(fitnessShiftKromosomDua)
     setfitnesKromosomDua(fitnessShiftKromosomDua)
@@ -303,6 +319,7 @@ if(shuffleArrayDuabelas[0].kualitas === 0 && shuffleArrayDuabelas[1].kualitas ==
 }
 if(fitnessShiftKromosomTiga === undefined){
     console.log()
+    setfitnesKromosomTiga(0)
 } else{
     console.log(fitnessShiftKromosomTiga)
     setfitnesKromosomTiga(fitnessShiftKromosomTiga)
@@ -358,15 +375,16 @@ if(shuffleArrayEnambelas[0].kualitas === 0 && shuffleArrayEnambelas[1].kualitas 
 
 if(fitnessShiftKromosomEmpat === undefined){
     console.log()
+    setfitnesKromosomEmpat(0)
 } else{
     console.log(fitnessShiftKromosomEmpat)
-    setfitnesKromosomTiga(fitnessShiftKromosomEmpat)
+    setfitnesKromosomEmpat(fitnessShiftKromosomEmpat)
 }
 if(fitnessKualitasKromosomEmpat === undefined){
     console.log()
 } else{
     console.log(fitnessKualitasKromosomEmpat)
-    setfitnesKromosomTiga(fitnessKualitasKromosomEmpat)
+    setfitnesKromosomEmpat(fitnessKualitasKromosomEmpat)
 }
 let totalFitnesKromosomEmpat = fitnessShiftKromosomEmpat + fitnessKualitasKromosomEmpat
 if(isNaN(totalFitnesKromosomEmpat)){
@@ -376,6 +394,28 @@ if(isNaN(totalFitnesKromosomEmpat)){
     setfitnesKromosomEmpat(totalFitnesKromosomEmpat)
 }
 
+console.log(totalFitnesKromosomSatu)
+
+if(isNaN(totalFitnesKromosomSatu) && fitnesKualitasKromosomSatu !== 1 && fitnesShiftKromosomSatu !== 1){
+    const tableSatu = data.concat(dataDua, dataTiga, dataEmpat)
+    setTableIndukSatu(tableSatu)
+} else if(isNaN(totalFitnesKromosomDua) && fitnessKualitasKromosomDua !== 1 && fitnessShiftKromosomDua !== 1){
+    const tableDua = dataLima.concat(dataEnam, dataTujuh, dataDelapan)
+    setTableIndukSatu(tableDua)
+} else {
+    setTableIndukSatu()
+}
+
+
+if(isNaN(totalFitnesKromosomTiga) && fitnessKualitasKromosomTiga !== 1 && fitnessShiftKromosomTiga !== 1){
+    const tableTiga = dataSembilan.concat(dataSepuluh, dataSebelas, dataDuabelas)
+    setTableIndukDua(tableTiga)
+} else if(isNaN(totalFitnesKromosomEmpat) && fitnessKualitasKromosomEmpat !== 1 && fitnessShiftKromosomEmpat !== 1){
+    const tableEmpat = dataTigabelas.concat(dataEmpatbelas, dataLimabelas, dataEnambelas)
+    setTableIndukDua(tableEmpat)
+} else {
+    setTableIndukDua()
+}
 
     setDataPembina(data)
     setDataPembinaDua(dataDua)
@@ -456,6 +496,80 @@ if(isNaN(totalFitnesKromosomEmpat)){
                 <th>3</th>
             </tr>
             
+        </thead>
+    </table>
+    <p />
+    <h3>Table Induk</h3>
+    <table border={1}>
+        <thead>
+        <tr>
+                <th></th>
+                <th colSpan={3}>sabtu</th>
+                <th colSpan={3}>minggu</th>
+                <th colSpan={3}>sabtu</th>
+                <th colSpan={3}>minggu</th>
+                <th>Total Fitness</th>
+            </tr>
+            <tr>
+                <th>Kromosom 1</th>
+              {tableIndukSatu}
+            </tr>
+            <tr>
+                <th>Kromosom 2</th>
+              {tableIndukDua}
+            </tr>
+            <tr>
+                <th>Shift</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+        </thead>
+    </table>
+    <p />
+    <h3>Table Jadwal Fix</h3>
+    <table border={1}>
+        <thead>
+        <tr>
+                <th></th>
+                <th colSpan={3}>sabtu</th>
+                <th colSpan={3}>minggu</th>
+                <th colSpan={3}>sabtu</th>
+                <th colSpan={3}>minggu</th>
+                <th>Total Fitness</th>
+            </tr>
+            <tr>
+                <th>Wafe 1</th>
+              {tableIndukSatu}
+            </tr>
+            <tr>
+                <th>Kromosom 2</th>
+              {tableIndukDua}
+            </tr>
+            <tr>
+                <th>Shift</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
         </thead>
     </table>
  </>)   
